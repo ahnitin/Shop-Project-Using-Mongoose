@@ -23,8 +23,9 @@ const shopRoutes = require("./routes/shop");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
-  User.findById("65db1c55ac693346f658a534")
+  User.findById("65db296f96bfd06ba8e85976")
     .then((user) => {
+      console.log(user);
       req.user = user;
       next();
     })
